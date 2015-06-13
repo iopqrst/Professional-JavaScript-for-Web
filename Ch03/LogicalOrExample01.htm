@@ -7,6 +7,14 @@
 			var found = true;
 			var result = (found || someUndeclaredVariable); //no error
 			alert(result); //works
+
+			/**
+			 * 相当于下面的方法
+			 */
+			
+			if(found == false) {
+				someUndeclaredVariable
+			}
 		</script>
 
 	</head>

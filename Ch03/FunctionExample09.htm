@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Function Example 9</title>
-    <script type="text/javascript">
-        function doAdd(num1, num2) {
-            //if(arguments.length == 1) {
-                arguments[1] = 10;
-            //}
-            alert(arguments[0] + num2);
-        }
 
-        doAdd(10, 20);        //20
-        doAdd(30, 20);    //50
+	<head>
+		<title>Function Example 9</title>
+		<script type="text/javascript">
+			function doAdd(num1, num2) {
+				//if(arguments.length == 1) {
+				arguments[1] = 10;
+				//}
+				alert(arguments[0] + num2);
+			}
+			doAdd(10, 20); //20
+			doAdd(30, 20); //50
+			doAdd(); // 如果参数没有传递至，则arguments[1]不会被赋值
+		</script>
+	</head>
 
-    </script>
-</head>
-<body>
+	<body>
 
-</body>
+	</body>
+
 </html>
