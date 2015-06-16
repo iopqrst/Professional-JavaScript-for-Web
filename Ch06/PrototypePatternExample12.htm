@@ -18,9 +18,13 @@
 			var person1 = new Person();
 			var person2 = new Person();
 			person1.friends.push("Van");
-			alert(person1.friends); //"Shelby,Court,Van"
-			alert(person2.friends); //"Shelby,Court,Van"
+			person1.friends.push("monkey");
+			alert(person1.friends); //"Shelby,Court,Van,monkey"
+			alert(person2.friends); //"Shelby,Court,Van,monkey"
 			alert(person1.friends === person2.friends); //true
+			
+			
+			
 		</script>
 	</head>
 
