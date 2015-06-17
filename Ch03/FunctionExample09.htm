@@ -4,15 +4,32 @@
 	<head>
 		<title>Function Example 9</title>
 		<script type="text/javascript">
+			'use strict';
+
 			function doAdd(num1, num2) {
 				//if(arguments.length == 1) {
-				arguments[1] = 10;
+				arguments[1] = 10; //
 				//}
 				alert(arguments[0] + num2);
 			}
 			doAdd(10, 20); //20
 			doAdd(30, 20); //50
 			doAdd(); // 如果参数没有传递至，则arguments[1]不会被赋值
+			 //arguments 对象的长度是有传入参数个数决定的，而非定义函数时命名参数个数决定的
+			 //严格模式模式下导致arguments[1] 重新赋值失败
+			 //每次执行这个doAdd()函数都会重写第二个参数，将第二个参数的值修改为10。
+			 //因为arguments对象中的值会自动反映到对应的命名参数，所以修改arguments[1]，也就修改了num2，结
+			 //果它们的值都会变成10。不过，这并不是说读取这两个值会访问相同的内存空间；
+			 //它们的内存空间是独立的，但它们的值会同步。
+			 //但这种影响是单向的：修改命名参数不会改变arguments中对应的值。另外还要记住，如果只传入了一个参数，
+			 //那么为arguments[1]设置的值不会反应到命名参数中。
+			 //这是因为arguments对象的长度是由传入的参数个数决定的，不是由定义函数时的命名参数的个数决定的。
+			 //没有传递值的命名参数将自动被赋予undefined值。这就跟定义了变量但又没有初始化一样。
+			 //例如，如果只给doAdd()函数传递了一个参数，则num2中就会保存undefined值。
+			 //严格模式对如何使用argumetns对象做出了一些限制。首先，像前面例子中那样的赋值会变得无效。
+			 //也就是说，即使把arguments[1]设置为10，num2的值仍然还是undefined。
+			 //其次，重写arguments的值会导致语法错误（代码将不会执行）。
+			 //ECMAScript中的所有参数传递的都是值，不可能通过引用传递参数。
 		</script>
 	</head>
 
