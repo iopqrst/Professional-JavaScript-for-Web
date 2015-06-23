@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Constructor Pattern Example 2</title>
-    <script type="text/javascript">
-    
-        function Person(name, age, job){
-            this.name = name;
-            this.age = age;
-            this.job = job;
-            this.sayName = function(){
-                alert(this.name);
-            };
-        }
-        
-        var person = new Person("Nicholas", 29, "Software Engineer");
-        person.sayName();   //"Nicholas"
-        
-        Person("Greg", 27, "Doctor");  //adds to window
-        window.sayName();   //"Greg"
-        
-        var o = new Object();
-        Person.call(o, "Kristen", 25, "Nurse");
-        o.sayName();    //"Kristen"
-        
-    </script>
-</head>
-<body>
 
-</body>
+	<head>
+		<title>Constructor Pattern Example 2</title>
+		<script type="text/javascript">
+			function Person(name, age, job) {
+				this.name = name;
+				this.age = age;
+				this.job = job;
+				this.sayName = function() {
+					alert(this.name);
+				}
+			};
+			
+			 // 当作构造函数使用
+			var person = new Person("Nicholas", 29, "Software Engineer");
+			 //"Nicholas"
+			person.sayName();
+			
+			 // 作为普通函数调用
+			 // 添加到window
+			Person("Greg", 27, "Doctor"); //"Greg"
+			window.sayName(); 
+			
+			// 在另一个对象的作用域中调用
+			var o = new Object();
+			Person.call(o, "Kristen", 25, "Nurse");
+			o.sayName(); //"Kristen"
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
 </html>

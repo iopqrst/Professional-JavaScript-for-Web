@@ -11,11 +11,13 @@
 			Person.prototype.sayName = function() {
 				alert(this.name);
 			};
+			
 			var person1 = new Person();
 			var person2 = new Person();
 			person1.name = "Greg";
-			alert(person1.name); //"Greg" � from instance
-			alert(person2.name); //"Nicholas" � from prototype
+			
+			alert(person1.name); //"Greg" from instance
+			alert(person2.name); //"Nicholas" from prototype
 		</script>
 	</head>
 
