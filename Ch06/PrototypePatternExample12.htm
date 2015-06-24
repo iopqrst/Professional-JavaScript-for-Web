@@ -4,6 +4,7 @@
 	<head>
 		<title>Prototype Pattern Example</title>
 		<script type="text/javascript">
+		
 			function Person() {}
 			Person.prototype = {
 				constructor: Person,
@@ -15,16 +16,18 @@
 					alert(this.name);
 				}
 			};
+			
 			var person1 = new Person();
 			var person2 = new Person();
+			
 			person1.friends.push("Van");
 			person1.friends.push("monkey");
+			
+			// 一个实例修改，导致所有实例上引用类型的值否发生变化
 			alert(person1.friends); //"Shelby,Court,Van,monkey"
 			alert(person2.friends); //"Shelby,Court,Van,monkey"
+			
 			alert(person1.friends === person2.friends); //true
-			
-			
-			
 		</script>
 	</head>
 
