@@ -9,11 +9,13 @@
 			}
 
 			function SubType() {}
-				//inherit from SuperType
+			//inherit from SuperType
 			SubType.prototype = new SuperType();
+			
 			var instance1 = new SubType();
 			instance1.colors.push("black");
 			alert(instance1.colors); //"red,blue,green,black"
+			
 			var instance2 = new SubType();
 			alert(instance2.colors); //"red,blue,green,black"
 		</script>

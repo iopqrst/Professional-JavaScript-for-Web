@@ -5,14 +5,37 @@
 		<title>Object.keys() Example</title>
 		<script type="text/javascript">
 			function Person() {}
+			
 			Person.prototype.name = "Nicholas";
 			Person.prototype.age = 29;
 			Person.prototype.job = "Software Engineer";
+			
 			Person.prototype.sayName = function() {
 				alert(this.name);
 			};
-			var keys = Object.keys(Person.prototype);
-			alert(keys); //"name,age,job,sayName"
+			
+			var akeys = Object.keys(Person.prototype);
+			alert(akeys); //"name,age,job,sayName"
+			
+			var p1 = new Person();
+			p1.name = "rob";
+			p1.age = 31;
+			
+			var p1keys = Object.keys(p1);
+			
+			alert(p1keys); //name,age
+			
+			/**
+			 * Object.getOwnPropertyNames 获取所有实例属性，包含不可枚举的
+			 */
+			var keys = Object.getOwnPropertyNames(Person.prototype); // constructor,name,age,sayName
+			
+			alert(keys);
+			
+			var keys2  = Object.getOwnPropertyNames(p1); // name, age
+			alert(keys2);
+			
+			//浏览器支持：IE9+、Firefox4+、Safari5+、Opera12+、Chrome
 		</script>
 	</head>
 

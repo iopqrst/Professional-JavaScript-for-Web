@@ -5,7 +5,9 @@
 		<title>Prototype Pattern Example</title>
 		<script type="text/javascript">
 			function Person() {}
+			
 			var friend = new Person();
+			
 			Person.prototype = {
 				constructor: Person,
 				name: "Nicholas",
@@ -15,7 +17,15 @@
 					alert(this.name);
 				}
 			};
-			friend.sayName(); //error  sayName is not a function  注意原型模型
+			try {
+				friend.sayName(); //error  sayName is not a function  注意原型模型
+			} catch (e) {
+				alert('错误信息：' + e.message);
+			}
+			
+			var friend2 = new Person();
+			
+			friend2.sayName();
 		</script>
 	</head>
 

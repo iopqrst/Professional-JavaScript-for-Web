@@ -6,24 +6,30 @@
 		<script type="text/javascript">
 			function SuperType() {
 				this.property = true;
-			}
+			};
+			
 			SuperType.prototype.getSuperValue = function() {
 				return this.property;
 			};
 
 			function SubType() {
 					this.subproperty = false;
-				}
-				//inherit from SuperType
+			};
+			//inherit from SuperType
 			SubType.prototype = new SuperType();
 			SubType.prototype.getSubValue = function() {
 				return this.subproperty;
 			};
+			
 			var instance = new SubType();
 			alert(instance.getSuperValue()); //true
+			
+			// 判断实例与原型的关系，方法一
 			alert(instance instanceof Object); //true
 			alert(instance instanceof SuperType); //true
 			alert(instance instanceof SubType); //true
+			
+			// 判断实例与原型的关系，方法二
 			alert(Object.prototype.isPrototypeOf(instance)); //true
 			alert(SuperType.prototype.isPrototypeOf(instance)); //true
 			alert(SubType.prototype.isPrototypeOf(instance)); //true
