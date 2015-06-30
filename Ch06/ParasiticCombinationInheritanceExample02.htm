@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Parasitic Combination Inheritance Example</title>
+		<script type="text/javascript">
+			function object(o) {
+				function F() {};
+				F.prototype = o;
+				return new F();
+			}
+
+			function inheritPrototype(superClass, subClass) {
+				var o = object(superClass.prototype);
+				o.constructor = subClass;
+				subClass.prototype = o;
+			}
+
+			function Parent(name) {
+				this.name = name;
+				this.friends = ['a','b','c'];
+			}
+			
+			Parent.prototype.sayName = function() {
+				alert(this.name);
+			}
+
+			function Child(name, age) {
+				Parent.call(this, name);
+				this.age = age;
+			}
+			
+			inheritPrototype(Parent, Child);
+			
+			Child.prototype.sayAge = function() {
+				alert(this.age);
+			}
+			
+			var child1 = new Child("child1" , 22);
+			child1.sayName();
+			child1.sayAge();
+			child1.friends.push('d');
+			child1.friends.push('e');
+			
+			alert(child1.friends);
+			
+			var child2 = new Child("child2" , 23);
+			child2.friends.push('f');
+			
+			alert(child2.friends);
+			
+			alert( child1.sayName == child2.sayName );
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>
