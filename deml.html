@@ -5,7 +5,8 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script type="text/javascript">
-			'use strict';
+			//'use strict';
+			
 			window.color = 'red';
 			
 			var o = {
@@ -13,11 +14,15 @@
 			};
 
 			function sayColor() {
-				console.info(this.color);
+				alert(this.color);
 			}
 			
 			sayColor(); // red
-			//sayColor.call(this); // red
+			sayColor.call(this); // red
+			sayColor.call(window);
+			sayColor.call(o);
+			
+		</script>
 	</head>
 
 	<body>
