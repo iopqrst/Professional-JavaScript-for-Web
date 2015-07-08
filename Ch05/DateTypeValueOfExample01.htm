@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Date Type ValueOf() Example</title>
-    <script type="text/javascript">
-    
-        var date1 = new Date(2007, 0, 1);          //January 1, 2007
-        var date2 = new Date(2007, 1, 1);          //February 1, 2007
-        
-        alert(date1 < date2);  //true
-        alert(date1 > date2);  //false
 
-    </script>
-</head>
-<body>
+	<head>
+		<title>Date Type ValueOf() Example</title>
+		<script type="text/javascript">
+			var date1 = new Date(2007, 0, 1); //January 1, 2007
+			var date2 = new Date(2007, 1, 1); //February 1, 2007
+			
+			alert(typeof date1); // object
+			
+			// date1 = 1167580800000, date2 =  1170259200000
+			alert('date1 = ' + date1.valueOf() + ', date2 =  ' + date2. valueOf());
 
-</body>
+			alert(date1 < date2); //true
+			alert(date1 > date2); //false
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
 </html>
