@@ -23,6 +23,11 @@
         function getAllElements(){
             var elements = document.getElementsByTagName("*"); //12 in most browsers, 15 in IE because it includes comments
             alert(elements.length);
+            
+            for (var i = 0; i < elements.length; i++) {
+            	//console.info(elements[i]);
+            }
+            
             alert(elements[4].outerHTML);
         }
     
