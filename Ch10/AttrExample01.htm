@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Attr Example</title>
-</head>
-<body>
-    <div id="myDiv"></div>
-    <input type="button" value="Assign Attribute" onclick="assignAttribute()">
 
-    <script type="text/javascript">
-        function assignAttribute(){
-            var element = document.getElementById("myDiv");
-            var attr = document.createAttribute("align");
-            attr.value = "left";
-            element.setAttributeNode(attr);
-            
-            alert(element.attributes["align"].value);       //"left"
-            alert(element.getAttributeNode("align").value); //"left"
-            alert(element.getAttribute("align"));           //"left"
+	<head>
+		<title>Attr Example</title>
+	</head>
 
-            
-        }
+	<body>
+		<div id="myDiv"></div>
+		<input type="button" value="Assign Attribute" onclick="assignAttribute()">
 
-    </script>
-</body>
+		<script type="text/javascript">
+			function assignAttribute() {
+				var element = document.getElementById("myDiv");
+				var attr = document.createAttribute("align");
+				attr.value = "left";
+				element.setAttributeNode(attr);
+				alert(element.attributes["align"].value); //"left"
+				alert(element.getAttributeNode("align").value); //"left"
+				alert(element.getAttribute("align")); //"left"
+			}
+			
+			
+			
+			
+			
+			function loadScript ( ulr ) {
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = url;
+				
+				document.body.appendChild(script);
+			}
+			
+			function loadStyles ( url ) {
+				var link = document.createElement("link");
+				
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = url;
+				
+				var head = document.getElementsByTagName('head')[0];
+				head.appendChild(link);
+			}
+		</script>
+	</body>
+
 </html>

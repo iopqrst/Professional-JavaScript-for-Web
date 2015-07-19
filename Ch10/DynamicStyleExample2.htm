@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Dynamic Style Example 2</title>
-</head>
-<body>
-    <p>You should see the background color change after clicking the button.</p>
-    <input type="button" value="Add Style" onclick="addStyle()">
 
-    <script type="text/javascript">
-        function loadStyleString(css){
-            var style = document.createElement("style");
-            style.type = "text/css";
-            try{
-                style.appendChild(document.createTextNode(css));
-            } catch (ex){
-                style.styleSheet.cssText = css;
-            }
-            var head = document.getElementsByTagName("head")[0];
-            head.appendChild(style);
-        }
-    
-        function addStyle(){
-            loadStyleString("body{background-color:red}"); 
-        }
+	<head>
+		<title>Dynamic Style Example 2</title>
+	</head>
 
-    </script>
-</body>
+	<body>
+		<p>You should see the background color change after clicking the button.</p>
+		<input type="button" value="Add Style" onclick="addStyle()">
+
+		<script type="text/javascript">
+			function loadStyleString(css) {
+				var style = document.createElement("style");
+				style.type = "text/css";
+				try {
+					//Firefox, Safari/ chrome/ Opera 浏览器中正常运行，但是在IE中会报错，所以通过异常处理
+					style.appendChild(document.createTextNode(css));
+				} catch (ex) {
+					// ie 中正常
+					style.styleSheet.cssText = css;
+				}
+				var head = document.getElementsByTagName("head")[0];
+				head.appendChild(style);
+			}
+
+			function addStyle() {
+				loadStyleString("body{background-color:red}");
+			}
+		</script>
+	</body>
+
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+
+		<div id="box1"></div>
+		<div id="box2"> </div>
+		<div id="box3"> Hello World !</div>
+
+		<script type="text/javascript">
+			var oUl = document.getElementsByTagName('ul')[0]
+			 alert(oUl.childNodes.length); // 9 包含4个文本节点
+			var m = 0,
+				n = 0;
+			for (var i = 0, len = oUl.childNodes.length; i < len; i++) {
+				if (oUl.childNodes[i].nodeType == 1) {
+					m++;
+				} else if (oUl.childNodes[i].nodeType == 3) {
+					n++;
+				}
+			}
+			
+			alert ( oUl.children.length );  // 直接获取，都不用判断元素类型
+			
+			alert('元素节点 = ' + m + ', 文本节点 = ' + n);
+			
+			
+			
+			var obox1 = document.getElementById("box1");
+			var obox2 = document.getElementById("box2");
+			var obox3 = document.getElementById("box3");
+			
+			var arr = [obox1, obox2, obox3];
+			
+			for( var i = 0, len = arr.length; i < len ; i++) {
+				console.info( arr[i].firstChild );
+				
+				if ( arr[i].firstChild ) {
+					arr[i].firstChild.nodeValue = "<span style='color:#ff0000'>append text " + i + '</span>';
+				}
+			}
+		</script>
+	</body>
+
+</html>
