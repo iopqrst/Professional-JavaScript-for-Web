@@ -5,8 +5,9 @@
 		<title>Prototype Pattern Example</title>
 		<script type="text/javascript">
 			function Person() {}
+			
 			Person.prototype = {
-				constructor: Person,
+				constructor: Person,  //手动声明
 				name: "Nicholas",
 				age: 29,
 				job: "Software Engineer",
@@ -14,6 +15,7 @@
 					alert(this.name);
 				}
 			};
+			
 			var friend = new Person();
 			alert(friend instanceof Object); //true
 			alert(friend instanceof Person); //true

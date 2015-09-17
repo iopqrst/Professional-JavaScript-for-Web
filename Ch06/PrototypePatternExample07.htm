@@ -5,6 +5,7 @@
 		<title>Prototype Pattern Example</title>
 		<script type="text/javascript">
 			function Person() {}
+			
 			Person.prototype = {
 				name: "Nicholas",
 				age: 29,
@@ -13,6 +14,7 @@
 					alert(this.name);
 				}
 			};
+			
 			var friend = new Person();
 			alert(friend instanceof Object); //true
 			alert(friend instanceof Person); //true
