@@ -13,13 +13,15 @@
 				return function() {
 					return fn.apply(context, arguments);
 				};
-			}
+			};
+			
 			var handler = {
 				message: "Event handled",
 				handleClick: function(event) {
 					alert(this.message + ":" + event.type);
 				}
 			};
+			
 			var btn = document.getElementById("my-btn");
 			EventUtil.addHandler(btn, "click", bind(handler.handleClick, handler));
 		</script>

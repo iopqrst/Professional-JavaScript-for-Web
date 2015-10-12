@@ -11,9 +11,13 @@
 			var person = {
 				name: "Nicholas"
 			};
+			
 			alert(Object.isExtensible(person)); //true
+			
 			Object.preventExtensions(person);
+			
 			alert(Object.isExtensible(person)); //false
+			
 			person.age = 29;
 			alert(person.age);
 		</script>

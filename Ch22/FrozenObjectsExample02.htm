@@ -14,12 +14,15 @@
 			alert(Object.isExtensible(person)); //true
 			alert(Object.isSealed(person)); //false
 			alert(Object.isFrozen(person)); //false
+			
 			Object.freeze(person);
+			
 			alert(Object.isExtensible(person)); //false
 			alert(Object.isSealed(person)); //true
 			alert(Object.isFrozen(person)); //true
+			
 			person.age = 29;
-			alert(person.age);
+			alert(person.age);  //undefined
 		</script>
 	</body>
 
