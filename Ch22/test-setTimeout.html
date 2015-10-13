@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="button" name="demo" id="demo" value="demo" />
+		<script type="text/javascript">
+			var demo = document.getElementById("demo");
+			
+			demo.onclick = function() {
+				
+				// 指定的时间间隔表示何时将定时器的代码添加到队列，而不是何时实际执行代码。
+				// js 是单线程执行的，setTimeout/setInterval 
+				// 定时器对队列的工作方式是，当特定时间过去后将代码插入。
+				// 注意，给队列添加代码并不意味着对它立刻执行，而只能表示它会尽快执行。
+				// 设定一个150ms后执行的定时器不代表到了150ms代码就立刻执行，它表示代码会在150ms后被加入到队列中。
+				// 如果在这个时间点上，队列中没有其他东西，那么这段代码就会被执行，表面上看上去好像代码就在精确指定的时间点上执行了。
+				// 其他情况下，代码可能明显地等待更长时间才执行。
+				setTimeout(function(){
+					console.info('这里执行的是setTimeout方法');
+				},10);
+				
+				for (var i = 0; i < 100; i++) {
+					console.info(i);
+				}
+			}
+		</script>
+	</body>
+</html>
