@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script>
+			debugger;
+			var values = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'l', 'i', 'w', 'q', 't'];
+			var iterations = Math.floor(values.length / 8);
+			var leftover = values.length % 8;
+			
+			var i = 0;
+			if (leftover > 0) {
+				do {
+					process(values[i++]);
+				} while (--leftover > 0);
+			}
+			do {
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+				process(values[i++]);
+			} while (--iterations > 0);
+
+			function process(val) {
+				console.info(val);
+			}
+		</script>
+	</body>
+
+</html>
