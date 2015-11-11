@@ -7,6 +7,13 @@
 			var pattern = new RegExp("\\[bc\\]at", "gi");
 			alert(pattern.toString()); // /\[bc\]at/gi
 			alert(pattern.toLocaleString()); // /\[bc\]at/gi
+			
+			alert(pattern.valueOf());
+			
+			var r1 = /\[bc\]at/gi;
+			
+			alert('r1.toString = ' + r1.toString()); // /\[bc\]at/gi
+			alert('r1.valueOf = ' + r1.valueOf()); // /\[bc\]at/gi
 		</script>
 	</head>
 
