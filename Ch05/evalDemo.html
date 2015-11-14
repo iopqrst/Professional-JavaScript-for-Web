@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Object Type Example 3</title>
+		<script type="text/javascript">
+			eval("function sayHi() { alert('hi'); }");
+			sayHi();
+			
+			eval("var msg = 'hello world'; ");
+			alert(msg);
+		
+			//Uncaught ReferenceError: sayHi2 is not defined
+			sayHi2();
+			eval("function sayHi2() { alert('hi2'); }");
+			
+			//Uncaught ReferenceError: msg2 is not defined
+			alert(msg2);
+			eval("var msg2 = 'hello world2'; ");
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>
