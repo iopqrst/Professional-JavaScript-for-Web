@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Closure Example 2</title>
+	</head>
+
+	<body>
+		
+		<input type="button" name="someElement" id="someElement" value="Just click me!!" />
+		
+		<script type="text/javascript">
+			function assignHandler() {
+				var element = document.getElementById("someElement");
+				
+				var id = element.id;
+				element.onclick = function() {
+					alert(id);
+				};
+				
+				element = null;
+			}
+			
+			assignHandler();
+		</script>
+
+	</body>
+
+</html>
