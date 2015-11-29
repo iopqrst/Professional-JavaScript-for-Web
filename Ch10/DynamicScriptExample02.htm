@@ -14,7 +14,8 @@
 				var script = document.createElement("script");
 				script.type = "text/javascript";
 				try {
-					//Firefox, Safari/ chrome/ Opera 浏览器中正常运行，但是在IE中会报错，所以通过异常处理
+					//Firefox, Safari/ chrome/ Opera 浏览器中正常运行，
+					//但是在IE中会报错，所以通过异常处理
 					script.appendChild(document.createTextNode(code));
 				} catch (ex) {
 					// ie 中可以正常通过

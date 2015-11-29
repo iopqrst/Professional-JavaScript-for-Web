@@ -14,7 +14,8 @@
 				var style = document.createElement("style");
 				style.type = "text/css";
 				try {
-					//Firefox, Safari/ chrome/ Opera 浏览器中正常运行，但是在IE中会报错，所以通过异常处理
+					// Firefox, Safari/ chrome/ Opera 浏览器中正常运行，
+					// 但是在IE中会报错，所以通过异常处理
 					style.appendChild(document.createTextNode(css));
 				} catch (ex) {
 					// ie 中正常
