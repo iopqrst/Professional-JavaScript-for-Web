@@ -13,16 +13,19 @@
 		</ul>
 		<script type="text/javascript">
 			if (document.querySelector) {
-				//get the body element
+				//BODY
 				var body = document.querySelector("body");
 				alert(body.tagName);
-				//get the element with the ID "myDiv"
+				
+				//get the element with the ID "myDiv" => null
 				var myDiv = document.querySelector("#myDiv");
 				alert(myDiv);
+				
 				//get first element with a class of "selected"
 				var selected = document.querySelector(".selected");
 				alert(selected.innerHTML);
-				//get first image with class of "button"
+				
+				//get first image with class of "button" => null
 				var img = document.body.querySelector("img.button");
 				alert(img);
 			} else {

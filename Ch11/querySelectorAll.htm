@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Selectors API Example</title>
+	</head>
+
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<script type="text/javascript">
+			var divs = document.body.querySelectorAll("div"),
+				i, div,textNode;
+				
+			for (i = 0; i < divs.length; i++) {
+				div = document.createElement("div");
+				textNode = document.createTextNode(divs.length + i + 1);
+				div.appendChild(textNode);
+				document.body.appendChild(div);
+			}
+		</script>
+	</body>
+
+</html>
