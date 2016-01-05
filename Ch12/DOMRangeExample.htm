@@ -8,8 +8,10 @@
 				var range1 = document.createRange();
 				var range2 = document.createRange();
 				var p1 = document.getElementById("p1");
+				
 				range1.selectNode(p1);
 				range2.selectNodeContents(p1);
+				
 				document.getElementById("txtStartContainer1").value = range1.startContainer.tagName;
 				document.getElementById("txtStartOffset1").value = range1.startOffset;
 				document.getElementById("txtEndContainer1").value = range1.endContainer.tagName;
@@ -26,6 +28,7 @@
 
 	<body>
 		<p id="p1"><b>Hello</b> world!</p>
+		
 		<input type="button" value="Use Ranges" onclick="useRanges()" />
 		<table border="0">
 			<tr>
