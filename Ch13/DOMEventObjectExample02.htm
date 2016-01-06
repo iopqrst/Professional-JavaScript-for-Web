@@ -8,9 +8,13 @@
 	<body>
 		<input type="button" id="myBtn" value="Click Me" />
 		<script type="text/javascript">
+			document.body.style.background = '#FF0000';
+		
 			document.body.onclick = function(event) {
 				alert(event.currentTarget === document.body); //true
 				alert(this === document.body); //true
+				
+				// 如果点击的不是按钮，而是body其他的区域（注意，此时body内元素只有一个，body实际区域高度只是input的高度）时为false
 				alert(event.target === document.getElementById("myBtn")); //true
 			};
 		</script>
