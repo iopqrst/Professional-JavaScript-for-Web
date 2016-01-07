@@ -11,6 +11,7 @@
 			var btn = document.getElementById("myBtn");
 			btn.onclick = function(event) {
 				alert("Clicked");
+				// 取消进一步的事件捕获或冒泡。
 				event.stopPropagation();
 			};
 			document.body.onclick = function(event) {
