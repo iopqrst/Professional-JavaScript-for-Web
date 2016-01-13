@@ -10,10 +10,18 @@
 		<p>This example only works in Internet Explorer.</p>
 		<script type="text/javascript">
 			var btn = document.getElementById("myBtn");
-			btn.onclick = function() {
+			btn.onclick = function(event) {
+				// false
+				alert ( 'chrome下 window.event === event ? ' + window.event === event)
+				alert( window.event.srcElement );
 				alert(window.event.srcElement === this); //true
 			};
+			
+			//ie独有方法
 			btn.attachEvent("onclick", function(event) {
+				alert( event.srcElement );
+				
+				alert ('ie this ? ' + this);  //window
 				alert(event.srcElement === this); //false
 			});
 		</script>
