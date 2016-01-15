@@ -14,8 +14,14 @@
 					event = EventUtil.getEvent(event);
 					alert(EventUtil.getTarget(event).src);
 				});
+				
+				EventUtil.addHandler(image, "error", function(event) {
+					alert (' hey man ,what\'s the matter ?');
+				});
+				
 				document.body.appendChild(image);
-				image.src = "smile.gif";
+				
+				image.src = "smile2.gif";
 			});
 		</script>
 	</body>
