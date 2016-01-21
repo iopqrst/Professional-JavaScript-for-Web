@@ -10,11 +10,19 @@
 		<div id="myDiv" style="background-color:red;height:100px;width:100px">Move the mouse from here to the white</div>
 		<script type="text/javascript">
 			var div = document.getElementById("myDiv");
+			
 			EventUtil.addHandler(div, "mouseout", function(event) {
 				event = EventUtil.getEvent(event);
 				var target = EventUtil.getTarget(event);
 				var relatedTarget = EventUtil.getRelatedTarget(event);
-				alert("Moused out of " + target.tagName + " to " + relatedTarget.tagName);
+				console.log("Moused out of " + target.tagName + " to " + relatedTarget.tagName);
+			});
+			
+			EventUtil.addHandler(div, "mouseover", function(event) {
+				event = EventUtil.getEvent(event);
+				var target = EventUtil.getTarget(event);
+				var relatedTarget = EventUtil.getRelatedTarget(event);
+				console.log("target.tagName " + target.tagName + " ,relatedTarget.tagName " + relatedTarget.tagName);
 			});
 		</script>
 	</body>
