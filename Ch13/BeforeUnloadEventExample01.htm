@@ -12,8 +12,8 @@
 			EventUtil.addHandler(window, "beforeunload", function(event) {
 				event = EventUtil.getEvent(event);
 				var message = "I'm really going to miss you if you go.";
-				event.returnValue = message;
-				return message;
+				event.returnValue = message; // for ie or firefox
+				return message;  //for chrome safari
 			});
 		</script>
 	</body>
