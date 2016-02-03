@@ -13,6 +13,26 @@
 			<li id="sayHi">Say hi</li>
 		</ul>
 		<script type="text/javascript">
+			// 一般使用方式
+			(function(){
+				var ogoSomeWhere = document.getElementById("goSomewhere");
+				var odoSomething = document.getElementById("doSomething");
+				var osayHi = document.getElementById("sayHi");
+				
+				ogoSomeWhere.onclick = function() {
+					// do something!!!
+				};
+				
+				odoSomething.onclick = function() {
+					// do something !!!
+				};
+				
+				osayHi.onclick = function() {
+					// do something!!!
+				};
+			})();
+			
+			// 代理使用方式
 			(function() {
 				var list = document.getElementById("myLinks");
 				EventUtil.addHandler(list, "click", function(event) {

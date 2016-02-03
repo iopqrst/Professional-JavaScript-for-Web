@@ -12,13 +12,16 @@
 		<script type="text/javascript">
 			(function() {
 				var btn = document.getElementById("myBtn");
-				var div = document.getElementById("myDiv"),
-					EventUtil.addHandler(div, "myevent", function(event) {
-						alert("DIV: " + event.detail);
-					});
+				var div = document.getElementById("myDiv");
+				
+				EventUtil.addHandler(div, "myevent", function(event) {
+					alert("DIV: " + event.detail);
+				});
+				
 				EventUtil.addHandler(document, "myevent", function(event) {
 					alert("DOCUMENT: " + event.detail);
 				});
+				
 				EventUtil.addHandler(btn, "click", function(event) {
 					var event;
 					if (document.implementation.hasFeature("CustomEvents", "3.0")) {

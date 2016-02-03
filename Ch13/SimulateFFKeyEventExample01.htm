@@ -2,6 +2,7 @@
 <html>
 
 	<head>
+		<meta charset="UTF-8"/>
 		<title>Simulating Firefox Keyboard Events Example</title>
 		<script type="text/javascript" src="EventUtil.js"></script>
 	</head>
@@ -14,9 +15,11 @@
 			(function() {
 				var btn = document.getElementById("myBtn");
 				var textbox = document.getElementById("myTextbox")
+				
 				EventUtil.addHandler(btn, "keypress", function(event) {
 					alert(event.charCode);
 				});
+				
 				EventUtil.addHandler(btn, "click", function(event) {
 					//create event object
 					var event = document.createEvent("KeyEvents");
