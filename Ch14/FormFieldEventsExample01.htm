@@ -19,11 +19,13 @@
 		<script type="text/javascript">
 			EventUtil.addHandler(window, "load", function(event) {
 				var textbox = document.forms[0].elements[0];
+				
 				EventUtil.addHandler(textbox, "focus", function(event) {
 					event = EventUtil.getEvent(event);
 					var target = EventUtil.getTarget(event);
 					target.style.backgroundColor = "yellow";
 				});
+				
 				EventUtil.addHandler(textbox, "blur", function(event) {
 					event = EventUtil.getEvent(event);
 					var target = EventUtil.getTarget(event);
@@ -33,6 +35,7 @@
 						target.style.backgroundColor = "";
 					}
 				});
+				
 				EventUtil.addHandler(textbox, "change", function(event) {
 					event = EventUtil.getEvent(event);
 					var target = EventUtil.getTarget(event);

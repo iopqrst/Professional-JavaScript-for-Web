@@ -29,7 +29,7 @@
 				EventUtil.addHandler(window, "load", function(event) {
 					var textbox = document.forms[0].elements[0];
 					EventUtil.addHandler(textbox, "select", function(event) {
-						alert(getSelectedTextgetSelectedText(textbox));
+						alert(getSelectedText(textbox));
 					});
 					textbox.focus();
 				});
