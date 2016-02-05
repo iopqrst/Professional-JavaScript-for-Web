@@ -58,6 +58,7 @@
 				var btn4 = document.getElementById("btnRemove1");
 				var btn5 = document.getElementById("btnRemove2");
 				var btn6 = document.getElementById("btnRemove3");
+				
 				EventUtil.addHandler(btn1, "click", function(event) {
 					var selectbox = document.getElementById("selLocation");
 					var textTextbox = document.getElementById("txtText");
@@ -73,8 +74,15 @@
 					var textTextbox = document.getElementById("txtText");
 					var valueTextbox = document.getElementById("txtValue");
 					var newOption = new Option(textTextbox.value, valueTextbox.value);
-					selectbox.appendChild(newOption);
-					//selectbox.add(newOption, undefined);
+					
+//					if(/MSIE ([^;]+)/.test(navigator.userAgent.toUpperCase())) {
+//						var version = RegExp["$1"];
+//						alert( version );
+//					} 
+					
+					
+					//selectbox.appendChild(newOption); 
+					selectbox.add(newOption, undefined);// 添加最后一项，兼容方案
 				});
 
 				EventUtil.addHandler(btn3, "click", function(event) {
@@ -82,7 +90,8 @@
 					var selectedOptions = getSelectedOptions(selectbox);
 					var message = "";
 					for (var i = 0, len = selectedOptions.length; i < len; i++) {
-						message += "Selected index: " + selectedOptions[i].index + "\nSelected text: " + selectedOptions[i].text + "\nSelected value: " + selectedOptions[i].value + "\n\n";
+						message += "Selected index: " + selectedOptions[i].index + "\nSelected text: " 
+							+ selectedOptions[i].text + "\nSelected value: " + selectedOptions[i].value + "\n\n";
 					}
 					alert(message);
 				});

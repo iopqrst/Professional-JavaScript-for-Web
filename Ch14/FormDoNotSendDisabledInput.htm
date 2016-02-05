@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Form 提交不发送禁用的表单字段</title>
+		<script type="text/javascript" src="EventUtil.js"></script>
+	</head>
+
+	<body>
+		<form method="get" action="http://www.henmimang.com" id="myForm">
+			<input type="text" name="username" value="zhangsan"/>
+			<input type="text" name="age" value="29"/>
+			
+			<input type="hidden" name="gender" value="0" disabled="disabled"/>
+			<input type="submit" value="submit"/>
+		<script>
+			(function() {
+				var form = document.getElementById("myForm");
+				
+				
+			})();
+		</script>
+	</body>
+
+</html>

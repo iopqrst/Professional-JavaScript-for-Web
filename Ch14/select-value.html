@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<select name="location" id="selLocation">
+			<option value="Sunnyvale, CA" label="Sunnyvale other">Sunnyvale</option>
+			<option value="Los Angeles, CA">Los Angeles</option>
+			<option value="Mountain View, CA">Mountain View</option>
+			<option value="">China</option>
+			<option>Australia</option>
+		</select>
+
+		<script type="text/javascript">
+			(function(){
+				var oselect = document.getElementById("selLocation");
+				
+				/**
+				 * •如果没有选中的项，则选择框的value属性保存空字符串。   
+				 * •如果有一个选中项，而且该项的value特性已经在HTML中指定，则选择框的value属性等于选中项的value特性。即使value特性的值是空字符串，也同样遵循此条规则。
+				 * •如果有一个选中项，但该项的value特性在HTML中未指定，则选择框的value属性等
+				 * (IE8会返回空字符串，而IE9+、Sa-fari、Firefox、Chrome和Opera则会返回与text特性相同的值。)
+				 */
+				oselect.onchange = function() {
+					alert(this.value);
+					alert(this.options[0].label);
+				};
+			})();
+		</script>
+
+	</body>
+
+</html>

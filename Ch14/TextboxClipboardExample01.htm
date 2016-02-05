@@ -19,11 +19,24 @@
 			(function() {
 				var textbox = document.getElementById("txtPhone");
 				
+				EventUtil.addHandler(textbox, "beforecopy", function() {
+					alert(' just want to monitoring when happen');
+				});
+				
 				// 只对粘贴事件起作用
 				EventUtil.addHandler(textbox, "paste", function(event) {
 					event = EventUtil.getEvent(event);
 					var text = EventUtil.getClipboardText(event);
 					if (!/^\d*$/.test(text)) {
+						EventUtil.preventDefault(event);
+					}
+				});
+				
+				EventUtil.addHandler(textbox, "keypress", function(event) {
+					event = EventUtil.getEvent(event);
+					var target = EventUtil.getTarget(event);
+					var charCode = EventUtil.getCharCode(event);
+					if (!/\d/.test(String.fromCharCode(charCode)) && charCode > 9 && !event.ctrlKey) {
 						EventUtil.preventDefault(event);
 					}
 				});
