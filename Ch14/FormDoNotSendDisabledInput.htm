@@ -2,6 +2,7 @@
 <html>
 
 	<head>
+		<meta charset="UTF-8"/>
 		<title>Form 提交不发送禁用的表单字段</title>
 		<script type="text/javascript" src="EventUtil.js"></script>
 	</head>
@@ -12,6 +13,15 @@
 			<input type="text" name="age" value="29"/>
 			
 			<input type="hidden" name="gender" value="0" disabled="disabled"/>
+			
+			<select name="provice">
+				<option value="">河北省</option>
+			</select>
+			
+			<select name="city">
+				<option>北京</option>
+			</select>
+			
 			<input type="submit" value="submit"/>
 		<script>
 			(function() {

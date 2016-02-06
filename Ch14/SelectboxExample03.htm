@@ -27,18 +27,6 @@
 		</form>
 		<script type="text/javascript">
 			(function() {
-				function getSelectedOptions(selectbox) {
-					var result = new Array();
-					var option = null;
-					for (var i = 0, len = selectbox.options.length; i < len; i++) {
-						option = selectbox.options[i];
-						if (option.selected) {
-							result.push(option);
-						}
-					}
-					return result;
-				}
-
 				var btn1 = document.getElementById("btnFirst"), 
 					btn2 = document.getElementById("btnSecond"),
 					btn3 = document.getElementById("btnSelected");
@@ -57,10 +45,23 @@
 					var selectedOptions = getSelectedOptions(selectbox);
 					var message = "";
 					for (var i = 0, len = selectedOptions.length; i < len; i++) {
-						message += "Selected index: " + selectedOptions[i].index + "\nSelected text: " + selectedOptions[i].text + "\nSelected value: " + selectedOptions[i].value + "\n\n";
+						message += "Selected index: " + selectedOptions[i].index + "\nSelected text: "	 
+							+ selectedOptions[i].text + "\nSelected value: " + selectedOptions[i].value + "\n\n";
 					}
 					alert(message);
 				});
+				
+				function getSelectedOptions(selectbox) {
+					var result = new Array();
+					var option = null;
+					for (var i = 0, len = selectbox.options.length; i < len; i++) {
+						option = selectbox.options[i];
+						if (option.selected) {
+							result.push(option);
+						}
+					}
+					return result;
+				}
 			})();
 		</script>
 	</body>
