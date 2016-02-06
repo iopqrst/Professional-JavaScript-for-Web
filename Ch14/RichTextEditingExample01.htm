@@ -38,15 +38,19 @@
 			(function() {
 				EventUtil.addHandler(window, "load", function() {
 					frames["richedit"].document.designMode = "on";
+					//alert(window.frames[0] === frames["richedit"]);
 				});
+				
 				var simple = document.getElementById("divSimple");
 				var complex = document.getElementById("divComplex");
 				var queryDiv = document.getElementById("divQuery");
+				
 				EventUtil.addHandler(document.forms[0], "submit", function() {
 					event = EventUtil.getEvent(event);
 					var target = EventUtil.getTarget(event);
 					target.elements["comments"].value = frames["richedit"].document.body.innerHTML;
 				});
+				
 				EventUtil.addHandler(simple, "click", function(event) {
 					event = EventUtil.getEvent(event);
 					var target = EventUtil.getTarget(event);
